@@ -1,0 +1,65 @@
+.fr{
+	float: right;
+	margin-right: 40px;
+}
+.f_progress{
+	width:42%;
+	display: inline-block;
+	position: relative;
+	top: 15px;
+	left: 20px;
+}
+.add_food .btn{
+	width: 20%;
+	position: relative;
+	left: 40%;
+}
+.f_add,.h_span,.f_delete,.f_update{
+	cursor: pointer;
+}
+.f_add:hover,.h_span:hover,.f_delete:hover,.f_update:hover{
+	color: #dd4b39;
+}
+.h_span.befouse{
+	color: #dd4b39;
+}
+.acol{
+	margin-right: 0px;
+}
+.food_col{
+	font-size: 0.65em;
+	margin-left: 8%;
+}
+.init_col{
+	color: #BBBBBB;
+}
+.h_span{
+	font-size: 0.8em;
+	color: #AAAAAA;
+}
+.f_img{
+	max-height: 40px;
+	
+}
+.modal .table-striped td{
+	line-height: 45px;
+	
+}
+.list_wrap{
+	min-height:100px;
+	height: 350px;
+	
+}
+.scroll{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.addwrap{
+	background: #fff;
+    width: 305px;
+    height: 250px;
+    border: 2px #eee solid;
+    position: absolute;
+    right: -9px;
+	
+}
