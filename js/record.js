@@ -1,15 +1,36 @@
+var init_col = 1483;
+var all_food_num = 0;
+var allPage = 0;
+
+
+
 $(document).ready(function(){
-	var init_col = 1483;
-	setMaxCol(init_col);
+	setMaxCol();
+	$("#all_cal").on("click",function(){
+		var sContent ='<div id="set_col_wrap" class="update_wrap"><button type="button" class="close" data-dismiss="modal"'+
+			'aria-label="Close"><span aria-hidden="true">×</span></button><div class="form-group"><label for="fweight">重量</label>'+
+            '<input type="number" class="form-control" id="max_cal" placeholder="最大卡路里值"></div>'+
+            '<div  id="return_default" class="btn btn-default">返回</div>'+
+	  		'<div id="confirm_cal" class="btn btn-info pull-right">确定</div></div>';
+		$("#all_food").append(sContent);
+		$("#confirm_cal").on("click",function(){
+			init_col = $("#max_cal").val();
+			setMaxCol();
+		});
+		$("#return_default").on("click",function(){
+			$("#set_col_wrap").remove();
+		});
+		$(".close").on("click",function(){
+			$("#set_col_wrap").remove();
+		});
+	});
+	
 	InitUFTable(init_col);
-	$(".add_food .btn").on("click",function(){
-//		$(".modal").css('display','block'); 
+	$(".add_food .btn").on("click",function(){ 
 		InitPop();
 		
 	});
 });
-var all_food_num = 0;
-var allPage = 0;
 
 /**********************展示搜索的食物****************************/
 function initSTable(data_info){
@@ -32,12 +53,17 @@ function initSTable(data_info){
 		$("#food_list tbody").append(sContent);
 		if(data instanceof Array){
 			for(var i = 0; i<data.length;i++){
-				CfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
+				CRfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
 			}
 		}else{
-			CfTable(data.imgurl,data.foodname,data.Calorie);
+			CRfTable(data.imgurl,data.foodname,data.Calorie);
 		}
-		
+		$(".f_add").each(function(){
+		    $(this).click(function(){
+		         var fname = $(this).parents("tr").find(".fname").text();
+				 addFoodDialog($(this).parent(".b_add_wrap"),fname);
+		    })
+	    });
 		$(".pagination").remove();
 		$("#food_list").parent(".list_wrap").addClass("scroll");
 		console.log(data.statue);
@@ -79,7 +105,7 @@ function InitPage(){
 
 
 
-/**********************************展示当前页*/
+/**********************************展示当前页**************************/
 function InitCPageinfo(data_info){
 		$.ajax({
 			type:"post",
@@ -100,8 +126,15 @@ function InitCPageinfo(data_info){
 			$("#food_list tbody").append(sContent);
 			$("#food_list").parent(".list_wrap").removeClass("scroll");
 			for(var i = 0; i<data.length;i++){
-				CfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
+				CRfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
 			}
+			$(".f_add").each(function(){
+			    $(this).click(function(){
+			         var fname = $(this).parents("tr").find(".fname").text();
+					 addFoodDialog($(this).parent(".b_add_wrap"),fname);
+			    })
+		    });
+		 
 			console.log(data.statue);
 				
 		}
@@ -110,26 +143,27 @@ function InitCPageinfo(data_info){
 
 
 
-/**********展示食物库的食物的样式***************/
+/**********展示食物库的食物的样式****************************************/
 function CfTable(imgurl,foodname,col){
 	
 	var sContent = '<tr><td><img class="f_img" src="'+imgurl+'">&nbsp;<span  class="fname">'+foodname+'</span></td><td>'+col+'大卡/100g'
 				+'</td><td class="b_add_wrap"><span class="f_add">添加</span>/<span class="f_delete">删除</span></td></tr>';
 	$("#food_list tbody").append(sContent);
-	$(".f_add").on("click",function(){
-		var fname = $(this).parents("tr").find(".fname").text();
-//		console.log($(this).parents(".b_add_wrap"));
-//		console.log(fname);
-		addFoodDialog($(this).parent(".b_add_wrap"),fname);
-	});
+}
+
+
+/**********展示最近吃过食物库的食物的样式****************************************/
+function CRfTable(imgurl,foodname,col){
 	
+	var sContent = '<tr><td><img class="f_img" src="'+imgurl+'">&nbsp;<span  class="fname">'+foodname+'</span></td><td>'+col+'大卡/100g'
+				+'</td><td class="b_add_wrap"><span class="f_add">添加</span></td></tr>';
+	$("#food_list tbody").append(sContent);
 }
 
 
 
-/***********记录当日所吃的食物***************/
+/***********记录当日所吃的食物*********************************************/
 function addUFood(data_info){
-//	var data_info = {"foodname":foodname};
 	console.log(data_info);
 	$.ajax({
 		type:"post",
@@ -143,23 +177,16 @@ function addUFood(data_info){
 	});
 	function handlerData(data){
 		data = JSON.parse(data);
-//		console.log(data);
-//		$("#food_list tbody").empty();
-//		var sContent = '<tr><th style="width: 150px;">食物</th><th>热量值(/100g)</th> <th>操作</th></tr>';
-//		$("#food_list tbody").append(sContent);
-//		for(var i = 0; i<data.length;i++){
-//			CfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
-//		}
-//		$(".pagination").remove();
-//		$("#food_list").parent(".list_wrap").addClass("scroll");
-		console.log(data);
+		if(data.statue ==1){
+			alert("添加成功")
+		}
 	}
 }
 
 
 
 
-/************添加食物的弹出框***********************/
+/************添加食物的弹出框**************************************************/
 function addFoodDialog(pnode,fname){
 	var sContent ='<div class="addwrap"><button type="button" class="close" data-dismiss="modal"'+
 			'aria-label="Close"><span aria-hidden="true">×</span></button><div class="form-group"><label for="fweight">重量</label>'+
@@ -172,33 +199,50 @@ function addFoodDialog(pnode,fname){
   	$(".close").on("click",function(){
   		$(".addwrap").remove();
   	});
+  	/****************添加食物***/
   	$("#addtostock").on("click",function(){
-  		console.log("hhhh");
-  		var data_info = {"foodname":fname,"time":$("ftime").val(),"weight":$("#fweight").val()};
-  		addUFood(data_info);
+  		var fid;
+  		var data_ = {"foodname":fname};
+  		$.ajax({
+  			type:"post",
+  			url:"php/SearchFoodid.php",
+  			data:data_,
+  			async:true,
+  			success:function(data){
+				handlerData(data);
+			}
+  		});
+  	   function	handlerData(data){
+  	   		data = JSON.parse(data);
+			console.log(data);
+			fid = data.id;
+			var data_info = {"foodid":fid,"time":$("#ftime").val(),"weight":$("#fweight").val()};
+			addUFood(data_info);
+			$("#ftime").val("");
+			$("#fweight").val("");
+			
+  	   }
   	});
 }
 
-	
 
 
 
-/********设置每天所能摄入的最大卡路里*******************/
-function setMaxCol(col){
-	
-	$("#all_food .init_col").text("/"+col+"大卡");
-	$("#breakfast .init_col").text("/"+col*0.3+"大卡");
-	$("#lunch .init_col").text("/"+col*0.4+"大卡");
-	$("#dinner .init_col").text("/"+col*0.5+"大卡");
-	$("#extra .init_col").text("/"+col*0.6+"大卡");
+/********设置每天所能摄入的最大卡路里**********************************88*******/
+function setMaxCol(){
+	$("#all_food .init_col").text("/"+init_col+"大卡");
+	$("#breakfast .init_col").text("/"+init_col*0.3+"大卡");
+	$("#lunch .init_col").text("/"+init_col*0.4+"大卡");
+	$("#dinner .init_col").text("/"+init_col*0.5+"大卡");
+	$("#extra .init_col").text("/"+init_col*0.6+"大卡");
 	
 }
 
 
 
 
-/**********初始化每天吃的食物的表*************/
-function InitUFTable(init_col){
+/**********初始化每天吃的食物的表***********************************************/
+function InitUFTable(){
 	$.ajax({
 		type:"get",
 		url:"php/initFTable.php",
@@ -209,28 +253,33 @@ function InitUFTable(init_col){
 		}
 	});
 	function handlerData(data){
+		
 		data = JSON.parse(data);
+		$("#breakfast .userfood_line").remove();
+		$("#lunch .userfood_line").remove();
+		$("#dinner .userfood_line").remove();
+		$("#extra .userfood_line").remove();
 		var all_col =0,b_col=0,l_col = 0,d_col=0,e_col=0,per=0;
 		var b_col = 0;
 		for(var i = 0;i<data.length;i++){
 		
 			if(data[i].time =="早"){
-				var col = (data[i].weight/100)*data[i].Calorie;
+				var col = Math.round((data[i].weight/100)*data[i].Calorie);
 				b_col +=col;
 				all_col +=b_col;
 				CTable($("#breakfast"),data[i].id,data[i].foodname,data[i].weight,col,b_col);
 			}else if(data[i].time=="中"){
-				var col = (data[i].weight/100)*data[i].Calorie;
+				var col = Math.round((data[i].weight/100)*data[i].Calorie);
 				l_col +=col;
 				all_col +=l_col;
 				CTable($("#lunch"),data[i].id,data[i].foodname,data[i].weight,col,l_col);
 			}else if(data[i].time =="晚"){
-				var col = (data[i].weight/100)*data[i].Calorie;
+				var col = Math.round((data[i].weight/100)*data[i].Calorie);
 				d_col +=col;
 				all_col +=d_col;
 				CTable($("#dinner"),data[i].id,data[i].foodname,data[i].weight,col,d_col);
 			}else{
-				var col = (data[i].weight/100)*data[i].Calorie;
+				var col = Math.round((data[i].weight/100)*data[i].Calorie);
 				e_col +=col;
 				all_col +=e_col;
 				CTable($("#extra"),data[i].id,data[i].foodname,data[i].weight,col,e_col);
@@ -244,6 +293,20 @@ function InitUFTable(init_col){
 			$("#all_food .food_col").text(all_col+'大卡');
 		 	
 		}
+		$(".f_update").on("click",function(){
+			updateUfood($(this));
+		});
+		$(".f_delete").on("click",function(){
+			var id = $(this).parents(".userfood_line").attr("data-id");
+			var delete_data = {"id":id};
+			deleteUfood(delete_data);
+		});
+		$(".return_default").on("click",function(){
+			$("#update_weight_wrap").remove();
+		});
+		$(".close").on("click",function(){
+			$("#update_weight_wrap").remove();
+		});
 		switch(data.statue){
 			case -3:
 				alert("没有数据");
@@ -257,10 +320,76 @@ function InitUFTable(init_col){
 
 
 
+/******************修改食物重量***************************/
+function updateUfood(pnode){
+	var sContent ='<div id="update_weight_wrap" class="update_wrap"><button type="button" class="close" data-dismiss="modal"'+
+			'aria-label="Close"><span aria-hidden="true">×</span></button><div class="form-group"><label for="fweight">重量</label>'+
+            '<input type="number" class="form-control" id="updateweight" placeholder="重量"></div>'+
+            '<div  class="return_default btn btn-default">返回</div>'+
+	  		'<div class="confirm_cal btn btn-info pull-right">确定</div></div>';
+	$(pnode).parents(".userfood_line").append(sContent);
+	$(".confirm_cal").on("click",function(){
+		var id = $(this).parents(".userfood_line").attr("data-id");
+		var fweight =parseInt($("#updateweight").val());
+		var user_data = {"id":id,"weight":fweight};
+		$.ajax({
+			type:"post",
+			url:"php/updateUserFood.php",
+			async:true,
+			data:user_data,
+			success:function(data){
+				data = JSON.parse(data);
+				switch(data.statue){
+					case 1:
+						alert("修改成功");
+						InitUFTable();
+						break;
+					case -1:
+						alert("修改失败");
+						break;
+					case -2:
+						alert("参数传入有问题");
+						break;
+				}
+			}
+		});
+	});
+}
+
+
+
+
+/*********************删除该食物**************************************/
+
+function deleteUfood(data_info){
+	if(confirm("确定删除该记录")){
+		$.ajax({
+			type:"post",
+			url:"php/DeleteStockFood.php",
+			async:true,
+			data:data_info,
+			success:function(data){
+				data = JSON.parse(data);
+				switch(data.statue){
+					case 1:
+						alert("删除成功");
+						InitUFTable();
+						break;
+					case -1:
+						alert("删除失败");
+						break;
+					case -2:
+						alert("参数传入有问题");
+						break;
+				}
+			}
+		});
+	}
+}
 
 /**************每天所吃食物的展示表***************************/
 function CTable(ptable,fid,fname,fweight,fcol,acol,per){
-	var sContent = '<tr><td>'+fname+'</td><td>'+fweight+'</td><td>'+fcol+'</td><td>'+
+	var sContent = '<tr class = "userfood_line" data-id="'+fid+'"><td class="ufname">'+fname+'</td><td class="ufweight">'+fweight+'</td><td class="ufcal">'+fcol+'</td><td>'+
 	               '<span class="f_update">修改</span>/<span class="f_delete">删除</span> </td></tr>';
 	$(ptable).find( ".table tbody").append(sContent);
 	$(ptable).find(".acol").text(acol+"大卡");
@@ -355,6 +484,7 @@ function InitPop(){
 	initRecentFood();
     $(".close").on("click",function(){
 		$("#pop").empty();	
+		InitUFTable();
 	});
 	$("#fstock").on("click",function(){
 		$("#addftostock").remove();
@@ -389,7 +519,7 @@ function InitPop(){
 
 
 
-/********食物库添加食物*************/
+/********食物库添加食物*******************************************************/
 
 function addFoodtoStock(){
 	$(".modal .list_wrap").css("display","none");
@@ -459,7 +589,10 @@ function addFoodtoStock(){
 	
 }
 
-/**********************展示最近的食物****************************/
+
+
+
+/********************************展示最近的食物****************************/
 function initRecentFood(){
 	$.ajax({
 		type:"get",
@@ -478,8 +611,14 @@ function initRecentFood(){
 		var sContent = '<tr><th style="width: 150px;">食物</th><th>热量值(/100g)</th> <th>操作</th></tr>';
 		$("#food_list tbody").append(sContent);
 		for(var i = 0; i<data.length;i++){
-			CfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
+			CRfTable(data[i].imgurl,data[i].foodname,data[i].Calorie);
 		}
+		$(".f_add").each(function(){
+		    $(this).click(function(){
+		         var fname = $(this).parents("tr").find(".fname").text();
+				 addFoodDialog($(this).parent(".b_add_wrap"),fname);
+		    })
+	    });
 		$(".pagination").remove();
 		$("#food_list").parent(".list_wrap").addClass("scroll");
 		console.log(data.statue);

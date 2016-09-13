@@ -1,3 +1,5 @@
+<!--初始化当日食物表-->
+
 <?php
 header("Content-Type: text/html; charset=UTF-8");
 include_once 'opDB.class.php';

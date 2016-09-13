@@ -63,3 +63,20 @@
     right: -9px;
 	
 }
+
+.update_wrap{
+	position: absolute;
+	z-index: 1000;
+	background: #fff;
+    width: 200px;
+    height: 160px;
+    padding: 20px;
+    border: 2px #eee solid;
+    position: absolute;
+    right: 14%;
+    font-size: 0.63em;
+}
+.btn.btn-info{
+	background-color: #dd4b39;
+    border-color: #dd4b39 ;
+}
