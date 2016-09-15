@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CALORIES_WAR</title>
+  <title>AdminLTE 2 | ChartJS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -17,8 +17,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/WeightChart.css" />
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -26,9 +25,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!-- ADD THE CLASS layout-boxed TO GET A BOXED LAYOUT -->
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
-<!-- Site wrapper -->
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
@@ -37,13 +34,16 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>CALORIES_</b>WAR</span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -142,8 +142,8 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 C6J
-                  <small>Member since Nov. 2012</small>
+                  C6J
+                  <small>fighter</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -159,6 +159,7 @@
                     <a href="#">Friends</a>
                   </div>
                 </div>
+                <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -179,10 +180,7 @@
       </div>
     </nav>
   </header>
-
-  <!-- =============================================== -->
-
-  <!-- Left side column. contains the sidebar -->
+  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -208,7 +206,7 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
+       <ul class="sidebar-menu">
         <li class="header">个人</li>
         <li class="treeview">
           <a href="#">
@@ -218,21 +216,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 记录</a></li>
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 记录</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> 推荐食谱</a></li>
-            <li><a href="CalChart.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="WeightChart.html">
+          <a href="#">
             <i class="fa fa-dashboard"></i> <span>体重</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="rweight"><a href="#"><i class="fa fa-circle-o"></i> 记录</a></li>
-            <li class="cal_graph"><a href="WeightChart.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 记录</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
           </ul>
         </li>
         <li class="header">社区</li>
@@ -243,10 +241,19 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-           <ul class="treeview-menu">
-            <li class="myPost"><a href="mypostings.html"><i class="fa fa-circle-o"></i>我的帖子</a></li>
-             <li class="toPost"><a href="topost.html"><i class="fa fa-circle-o"></i> 发帖</a></li>
-             <li class="ourPost"><a href="ourpostings.html"><i class="fa fa-circle-o"></i>伤害圈</a></li>
+          <ul class="treeview-menu">
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 帖子</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>社区帖子</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 帖子</a></li>
           </ul>
         </li>
         
@@ -255,186 +262,64 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- =============================================== -->
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1 id="all_food">
-        	FOOD
-       <div class="progress progress-xs f_progress">
-           <div class="progress-bar progress-bar-yellow" style="width: 100px"></div>
-       </div>
-       <span class="acol food_col">0ka</span>
-        <span class="init_col"  id="all_cal" style="font-size: 0.65em; position: relative;">0ka</span>
-       <span class="badge bg-green" >55%</span>
-       
+      <h1>
+       	卡路里曲线
+        <small>Curve Graph</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 个人</a></li>
-        <li><a href="#">食物</a></li>
-        <li class="active">Boxed</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>卡路里</a></li>
+       
+        <li class="active">查看曲线</li>
       </ol>
-      <section class="content">
-	      <div class="row" id="breakfast">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">早餐</h3>
-	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
-	              
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th > calories(大卡)</th>
-	                  <th > Operate</th>
-	                </tr>
-	               
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="lunch">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">中餐</h3>
-	              <span class="badge bg-red fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	               
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	           <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="dinner">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">晚餐</h3>
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	          	<div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="extra">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">加餐</h3>
-	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      
-    	</section>
     </section>
 
     <!-- Main content -->
-    <section class="content" id="pop">
-    	
-    </section>
     <section class="content">
-      
-  	</section>
+      <div class="row">
+        <!-- /.col (LEFT) -->
+        <div class="col-md-9">
+         
+
+          <!-- BAR CHART -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">一周卡路里</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="barChart" style="height:230px"></canvas>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col (RIGHT) -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.6
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -632,21 +517,109 @@
 </div>
 <!-- ./wrapper -->
 
-
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- ChartJS 1.0.1 -->
+<script src="plugins/chartjs/Chart.min.js"></script>
 <!-- FastClick -->
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="js/record.js"></script>
-<script src="js/WeightChart.js"></script>
-<script src="js/calChart.js"></script>
+<!-- page script -->
+<script src="js/curvechart.js"></script>
+<script>
+  $(function () {
+    var areaChartData = {
+      labels: ["2016-9-1", "2016-9-2", "2016-9-3", "2016-9-4", "2016-9-5", "2016-9-6", "2016-9-7"],
+      datasets: [
+        {
+          label: "早餐",
+          fillColor: "rgba(210, 214, 222, 1)",
+          strokeColor: "rgba(210, 214, 222, 1)",
+          pointColor: "rgba(210, 214, 222, 1)",
+          pointStrokeColor: "#c1c7d1",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(220,220,220,1)",
+          data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label: "中餐",
+          fillColor: "rgba(60,141,188,0.9)",
+          strokeColor: "rgba(60,141,188,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,141,188,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,141,188,1)",
+          data: [28, 48, 40, 19, 86, 27, 90]
+        },
+        {
+          label: "晚餐",
+          fillColor: "rgba(160,141,118,0.9)",
+          strokeColor: "rgba(160,141,118,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(160,141,118,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(160,141,118,1)",
+          data: [38, 48, 41, 11, 16, 21, 95]
+        },
+        {
+          label: "加餐",
+          fillColor: "rgba(60,121,148,0.9)",
+          strokeColor: "rgba(60,121,148,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,121,148,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,121,148,1)",
+          data: [22, 41, 40, 16, 82, 27, 91]
+        }
+      ]
+    };
+
+   
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    var barChart = new Chart(barChartCanvas);
+    var barChartData = areaChartData;
+    barChartData.datasets[1].fillColor = "#00a65a";
+    barChartData.datasets[1].strokeColor = "#00a65a";
+    barChartData.datasets[1].pointColor = "#00a65a";
+    var barChartOptions = {
+      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+      scaleBeginAtZero: true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: true,
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - If there is a stroke on each bar
+      barShowStroke: true,
+      //Number - Pixel width of the bar stroke
+      barStrokeWidth: 2,
+      //Number - Spacing between each of the X value sets
+      barValueSpacing: 5,
+      //Number - Spacing between data sets within X values
+      barDatasetSpacing: 1,
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+      //Boolean - whether to make the chart responsive
+      responsive: true,
+      maintainAspectRatio: true
+    };
+
+    barChartOptions.datasetFill = false;
+    barChart.Bar(barChartData, barChartOptions);
+  });
+</script>
 </body>
 </html>

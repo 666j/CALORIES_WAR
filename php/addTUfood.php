@@ -1,8 +1,5 @@
 
 
-
-<!--用户添加当日摄入的食物-->
-
 <?php
 header("Content-Type: text/html; charset=UTF-8");
 include_once 'opDB.class.php';
@@ -39,16 +36,5 @@ function test_input($data){
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
-}
-
-
-function setSession($id,$account,$password,$nickname){
-	$_SESSION['id'] = $id;
-	$_SESSION['account'] = $account; 
-	$_SESSION['password'] = $password;
-	$_SESSION['nickname'] = $nickname;
-	
-	setcookie("account",$account, time()+3600);
-	setcookie("password",$password,time()+3600);
 }
 ?>

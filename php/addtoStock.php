@@ -1,4 +1,4 @@
-<!--往食物库中添加食物-->
+
 <?php
 header("Content-Type: text/html; charset=UTF-8");
 include_once 'opDB.class.php';

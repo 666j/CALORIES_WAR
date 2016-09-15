@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CALORIES_WAR</title>
+  <title>AdminLTE 2 | Boxed Layout</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -17,8 +17,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/WeightChart.css" />
+	<link rel="stylesheet" href="css/posting.css" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -37,7 +36,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>CALORIES_</b>WAR</span>
+      <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -134,7 +133,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">C6J</span>
+              <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -142,7 +141,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                 C6J
+                  Alexander Pierce - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -192,7 +191,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>C6J</p>
+          <p>Alexander Pierce</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -212,27 +211,27 @@
         <li class="header">个人</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>卡路里</span>
+            <i class="fa fa-dashboard"></i> <span>食物</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 记录</a></li>
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 记录</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> 推荐食谱</a></li>
-            <li><a href="CalChart.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="WeightChart.html">
+          <a href="#">
             <i class="fa fa-dashboard"></i> <span>体重</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="rweight"><a href="#"><i class="fa fa-circle-o"></i> 记录</a></li>
-            <li class="cal_graph"><a href="WeightChart.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
+            <li><a href="index.html"><i class="fa fa-circle-o"></i> 记录</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i> 查看曲线</a></li>
           </ul>
         </li>
         <li class="header">社区</li>
@@ -244,7 +243,7 @@
             </span>
           </a>
            <ul class="treeview-menu">
-            <li class="myPost"><a href="mypostings.html"><i class="fa fa-circle-o"></i>我的帖子</a></li>
+            <li class="myPost"><a href="#"><i class="fa fa-circle-o"></i>我的帖子</a></li>
              <li class="toPost"><a href="topost.html"><i class="fa fa-circle-o"></i> 发帖</a></li>
              <li class="ourPost"><a href="ourpostings.html"><i class="fa fa-circle-o"></i>伤害圈</a></li>
           </ul>
@@ -261,180 +260,32 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1 id="all_food">
-        	FOOD
-       <div class="progress progress-xs f_progress">
-           <div class="progress-bar progress-bar-yellow" style="width: 100px"></div>
-       </div>
-       <span class="acol food_col">0ka</span>
-        <span class="init_col"  id="all_cal" style="font-size: 0.65em; position: relative;">0ka</span>
-       <span class="badge bg-green" >55%</span>
-       
+      <h1>
+        Boxed Layout
+        <small>Blank example to the boxed layout</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 个人</a></li>
-        <li><a href="#">食物</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Layout</a></li>
         <li class="active">Boxed</li>
       </ol>
-      <section class="content">
-	      <div class="row" id="breakfast">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">早餐</h3>
-	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
-	              
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th > calories(大卡)</th>
-	                  <th > Operate</th>
-	                </tr>
-	               
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="lunch">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">中餐</h3>
-	              <span class="badge bg-red fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	               
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	           <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="dinner">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">晚餐</h3>
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	          	<div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="extra">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">加餐</h3>
-	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      
-    	</section>
     </section>
 
     <!-- Main content -->
-    <section class="content" id="pop">
-    	
-    </section>
     <section class="content">
-      
-  	</section>
+     
+    </section>
+    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.6
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -632,7 +483,6 @@
 </div>
 <!-- ./wrapper -->
 
-
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -645,8 +495,6 @@
 <script src="dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script src="js/record.js"></script>
-<script src="js/WeightChart.js"></script>
-<script src="js/calChart.js"></script>
+<script src="js/mypostings.js"></script>
 </body>
 </html>

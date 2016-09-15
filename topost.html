@@ -238,18 +238,17 @@
         <li class="header">社区</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>我的帖子</span>
+            <i class="fa fa-dashboard"></i> <span>帖子</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-           <ul class="treeview-menu">
+          <ul class="treeview-menu">
             <li class="myPost"><a href="mypostings.html"><i class="fa fa-circle-o"></i>我的帖子</a></li>
-             <li class="toPost"><a href="topost.html"><i class="fa fa-circle-o"></i> 发帖</a></li>
+             <li class="toPost"><a href="#"><i class="fa fa-circle-o"></i> 发帖</a></li>
              <li class="ourPost"><a href="ourpostings.html"><i class="fa fa-circle-o"></i>伤害圈</a></li>
           </ul>
-        </li>
-        
+        </li> 
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -262,167 +261,44 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1 id="all_food">
-        	FOOD
-       <div class="progress progress-xs f_progress">
-           <div class="progress-bar progress-bar-yellow" style="width: 100px"></div>
-       </div>
-       <span class="acol food_col">0ka</span>
-        <span class="init_col"  id="all_cal" style="font-size: 0.65em; position: relative;">0ka</span>
-       <span class="badge bg-green" >55%</span>
+        	TO POSTING
+      
        
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 个人</a></li>
-        <li><a href="#">食物</a></li>
-        <li class="active">Boxed</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 社区</a></li>
+        <li><a href="#">我的帖子</a></li>
+        <li class="active">发帖</li>
       </ol>
       <section class="content">
-	      <div class="row" id="breakfast">
-	        <div class="col-md-7">
+	      <div class="row">
+	        <div class="col-md-12">
+	
 	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">早餐</h3>
+	            <div class="box-header">
+	              <h3 class="box-title">分享点点滴滴
+	                <small>来呀，互相伤害啊</small>
+	              </h3>
 	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
+	            </div>
+	            <!-- /.box-header -->
+	            <div class="box-body pad">
+	              <form>
+	                <textarea id="postContent" class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+	              </form>
 	              
 	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th > calories(大卡)</th>
-	                  <th > Operate</th>
-	                </tr>
-	               
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
+	            <div class="box-footer">
+                <div type="submit" class="btn btn-default">Cancel</div>
+                <div type="submit" id="topost" class="btn btn-info pull-right">发表</button>
+              </div>
+	            
 	          </div>
-	          <!-- /.box -->
-	
-	         
 	        </div>
-	        
+	        <!-- /.col-->
 	      </div>
-	      <div class="row" id="lunch">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">中餐</h3>
-	              <span class="badge bg-red fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	               
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	           <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="dinner">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">晚餐</h3>
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	               <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	          	<div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      <div class="row" id="extra">
-	        <div class="col-md-7">
-	          <div class="box">
-	            <div class="box-header with-border">
-	              <h3 class="box-title">加餐</h3>
-	              
-	              <span class="badge bg-green fr">55%</span>
-	              <span class="init_col fr">/0ka</span>
-	              <span class="acol fr">0ka</span>
-	            </div>
-	            <!-- /.box-header -->
-	            <div class="box-body">
-	              <table class="table table-bordered">
-	                <tbody><tr>
-	                  
-	                  <th>Food</th>
-	                  <th>weight(g)</th>
-	                  <th> calories(大卡)</th>
-	                  <th>Operate</th>
-	                </tr>
-	                
-	              </tbody></table>
-	            </div>
-	            <!-- /.box-body -->
-	            <div class="box-footer clearfix">
-	             <div class="add_food">
-	             	<button type="button" class="btn btn-block btn-default">add</button>
-	             </div>
-	            </div>
-	          </div>
-	          <!-- /.box -->
-	
-	         
-	        </div>
-	        
-	      </div>
-	      
-    	</section>
+	      <!-- ./row -->
+	    </section>
     </section>
 
     <!-- Main content -->
@@ -643,10 +519,13 @@
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
+<!--<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>-->
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<script src="js/record.js"></script>
-<script src="js/WeightChart.js"></script>
-<script src="js/calChart.js"></script>
+<script type="text/javascript" src="dist/js/demo.js"></script>
+<script type="text/javascript" src="js/WeightChart.js"></script>
+<script type="text/javascript" src="js/calChart.js"></script>
+<script type="text/javascript" src="js/topost.js"></script>
+</script>
 </body>
 </html>

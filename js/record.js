@@ -197,7 +197,9 @@ function addFoodDialog(pnode,fname){
   			 '<div id="addtostock" class="btn btn-info pull-right">提交</div></div>';
   	$(pnode).append(sContent);
   	$(".close").on("click",function(){
+  		
   		$(".addwrap").remove();
+//		InitUFTable();
   	});
   	/****************添加食物***/
   	$("#addtostock").on("click",function(){
@@ -218,6 +220,7 @@ function addFoodDialog(pnode,fname){
 			fid = data.id;
 			var data_info = {"foodid":fid,"time":$("#ftime").val(),"weight":$("#fweight").val()};
 			addUFood(data_info);
+			InitUFTable();
 			$("#ftime").val("");
 			$("#fweight").val("");
 			

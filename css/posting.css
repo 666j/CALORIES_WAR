@@ -1,0 +1,16 @@
+.ptime{
+	float: right;
+	margin-right: 20%;
+}
+.aremark .ptime{
+	margin-right: 1%;
+}
+.aremark{
+	margin: 5px 15px;
+}
+.rname{
+	color: #001A35;
+}
+.show_remark_h button.btn{
+	float: right;
+}

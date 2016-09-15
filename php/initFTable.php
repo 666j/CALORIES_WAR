@@ -1,14 +1,13 @@
-<!--初始化当日食物表-->
 
 <?php
 header("Content-Type: text/html; charset=UTF-8");
 include_once 'opDB.class.php';
 session_start();
 $con = new opDB();
-
+$date =  date("Y-m-d");
 if (isset($_SESSION['id'])) {
 		$userid = $_SESSION['id'];
-		$sql = "SELECT * FROM food,user_food WHERE food.id = user_food.foodid and user_food.userid='{$userid}'";
+		$sql = "SELECT * FROM food,user_food WHERE food.id = user_food.foodid and user_food.userid='{$userid}'and date = '$date'";
 		$res = $con->get_result($sql);
 		echo json_encode($con->deal_result($res));
 		$con->for_close();
